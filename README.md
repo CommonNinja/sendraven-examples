@@ -12,6 +12,7 @@ agent inside limits that the API enforces.
 | [python-quickstart](python-quickstart/) | Python 3.10+, `httpx` | The same, in Python |
 | [openai-agents-followup](openai-agents-followup/) | Python, OpenAI Agents SDK | An agent that follows up politely in the same thread until the person replies (at most N times), then reads and summarises the answer, in polling or webhook mode |
 | [claude-mcp-inbox](claude-mcp-inbox/) | Claude Code, Claude Desktop, Anthropic API MCP connector | Support-inbox triage over the SendRaven MCP server: classify, draft, and hold every reply for a person to approve |
+| [postman](postman/) | Postman | Every endpoint, plus a "Start here" round trip that passes the thread and message ids along |
 
 There is no SendRaven SDK on npm or PyPI. Each quickstart has a one-file client
 (`sendraven.ts`, `sendraven.py`) that you can copy into your own project.
