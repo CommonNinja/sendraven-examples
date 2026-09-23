@@ -1,0 +1,19 @@
+{
+  "name": "sendraven-node-quickstart",
+  "private": true,
+  "version": "1.0.0",
+  "description": "SendRaven from Node with plain fetch: send, read replies as threads, reply in-thread, verify webhooks.",
+  "type": "module",
+  "engines": { "node": ">=20.6" },
+  "scripts": {
+    "dev": "tsx --env-file=.env src/cli.ts",
+    "build": "tsc",
+    "start": "node --env-file=.env dist/cli.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}
