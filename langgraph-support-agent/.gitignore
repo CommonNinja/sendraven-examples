@@ -1,0 +1,7 @@
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+support.sqlite
+support.sqlite-shm
+support.sqlite-wal

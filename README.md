@@ -11,6 +11,7 @@ agent inside limits that the API enforces.
 | [node-quickstart](node-quickstart/) | TypeScript, Node 20+, plain `fetch` | Send, list threads awaiting a reply, read, reply in the thread, idempotency, the error vocabulary, and verifying signed webhooks |
 | [python-quickstart](python-quickstart/) | Python 3.10+, `httpx` | The same, in Python |
 | [openai-agents-followup](openai-agents-followup/) | Python, OpenAI Agents SDK | An agent that follows up politely in the same thread until the person replies (at most N times), then reads and summarises the answer, in polling or webhook mode |
+| [langgraph-support-agent](langgraph-support-agent/) | Python, LangGraph, Claude via `langchain-anthropic` | A support agent over email: classify, draft from a knowledge base, then answer in the thread, mark handled, or pause at a LangGraph `interrupt()` for a person, with an approval-held key as the server-side backstop |
 | [claude-mcp-inbox](claude-mcp-inbox/) | Claude Code, Claude Desktop, Anthropic API MCP connector | Support-inbox triage over the SendRaven MCP server: classify, draft, and hold every reply for a person to approve |
 | [postman](postman/) | Postman | Every endpoint, plus a "Start here" round trip that passes the thread and message ids along |
 
@@ -84,6 +85,9 @@ round trip and no outside inbox received any of it:
   second run did not draft again.
 - **openai-agents-followup:** a first email, a follow-up in the same thread after
   the delay, and a threaded reply that ended the task with a correct summary.
+- **langgraph-support-agent:** not yet run live. Its routing (answer, mark
+  handled, escalate through the interrupt and resume) is covered by offline
+  tests with a fake client and a scripted model; its README says so.
 
 The Node example passes `tsc --noEmit` under `strict` and every Python file
 passes `py_compile`. Each README says what could not be verified.
