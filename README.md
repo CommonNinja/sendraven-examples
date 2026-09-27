@@ -12,6 +12,7 @@ agent inside limits that the API enforces.
 | [python-quickstart](python-quickstart/) | Python 3.10+, `httpx` | The same, in Python |
 | [openai-agents-followup](openai-agents-followup/) | Python, OpenAI Agents SDK | An agent that follows up politely in the same thread until the person replies (at most N times), then reads and summarises the answer, in polling or webhook mode |
 | [langgraph-support-agent](langgraph-support-agent/) | Python, LangGraph, Claude via `langchain-anthropic` | A support agent over email: classify, draft from a knowledge base, then answer in the thread, mark handled, or pause at a LangGraph `interrupt()` for a person, with an approval-held key as the server-side backstop |
+| [crewai-vendor-quotes](crewai-vendor-quotes/) | Python, CrewAI Flows, Claude | An operations crew that emails vendors for quotes, reads each reply in its thread, asks for what is missing, pauses with `@human_feedback` when a vendor asks for money, and compares the quotes in code |
 | [claude-mcp-inbox](claude-mcp-inbox/) | Claude Code, Claude Desktop, Anthropic API MCP connector | Support-inbox triage over the SendRaven MCP server: classify, draft, and hold every reply for a person to approve |
 | [postman](postman/) | Postman | Every endpoint, plus a "Start here" round trip that passes the thread and message ids along |
 
@@ -85,9 +86,13 @@ round trip and no outside inbox received any of it:
   second run did not draft again.
 - **openai-agents-followup:** a first email, a follow-up in the same thread after
   the delay, and a threaded reply that ended the task with a correct summary.
-- **langgraph-support-agent:** not yet run live. Its routing (answer, mark
-  handled, escalate through the interrupt and resume) is covered by offline
-  tests with a fake client and a scripted model; its README says so.
+- **langgraph-support-agent** (run live on 25 Sep 2026): a question answered
+  from the knowledge base and held on an approval-held key, a refund paused at
+  the interrupt and resumed, and "all sorted" marked handled.
+- **crewai-vendor-quotes** (run live on 27 Sep 2026): requests to three
+  vendors, a partial quote answered with a clarifying reply, a deposit request
+  paused for a person and answered with an edited reply, a decline closed, two
+  complete quotes compared.
 
 The Node example passes `tsc --noEmit` under `strict` and every Python file
 passes `py_compile`. Each README says what could not be verified.
