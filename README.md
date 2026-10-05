@@ -13,6 +13,7 @@ agent inside limits that the API enforces.
 | [openai-agents-followup](openai-agents-followup/) | Python, OpenAI Agents SDK | An agent that follows up politely in the same thread until the person replies (at most N times), then reads and summarises the answer, in polling or webhook mode |
 | [langgraph-support-agent](langgraph-support-agent/) | Python, LangGraph, Claude via `langchain-anthropic` | A support agent over email: classify, draft from a knowledge base, then answer in the thread, mark handled, or pause at a LangGraph `interrupt()` for a person, with an approval-held key as the server-side backstop |
 | [crewai-vendor-quotes](crewai-vendor-quotes/) | Python, CrewAI Flows, Claude | An operations crew that emails vendors for quotes, reads each reply in its thread, asks for what is missing, pauses with `@human_feedback` when a vendor asks for money, and compares the quotes in code |
+| [mastra-meeting-scheduler](mastra-meeting-scheduler/) | TypeScript, Mastra workflows, Claude | Books a meeting over email: offers free times, suspends the workflow until the reply, reads it into a typed answer, then books, offers again in the same thread, or hands it to a person |
 | [claude-mcp-inbox](claude-mcp-inbox/) | Claude Code, Claude Desktop, Anthropic API MCP connector | Support-inbox triage over the SendRaven MCP server: classify, draft, and hold every reply for a person to approve |
 | [postman](postman/) | Postman | Every endpoint, plus a "Start here" round trip that passes the thread and message ids along |
 

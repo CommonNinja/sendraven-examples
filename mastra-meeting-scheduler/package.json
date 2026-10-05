@@ -1,0 +1,25 @@
+{
+  "name": "sendraven-mastra-meeting-scheduler",
+  "private": true,
+  "version": "1.0.0",
+  "description": "A Mastra workflow that books a meeting over email: offers times, suspends until the reply, reads it, books or offers again, in the same thread.",
+  "type": "module",
+  "engines": {
+    "node": ">=20.6"
+  },
+  "scripts": {
+    "start": "tsx --env-file=.env src/main.ts",
+    "test": "tsx --test test/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@mastra/core": "1.74.0",
+    "@mastra/libsql": "1.25.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}
